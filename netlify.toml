@@ -1,0 +1,25 @@
+[build]
+command = "export DATABASE_URL=\"${NETLIFY_DATABASE_URL:-$DATABASE_URL}\" && NITRO_PRESET=netlify pnpm build && if [ \"${CONTEXT:-}\" = \"production\" ]; then pnpm migrate:production; fi"
+publish = "dist"
+functions = ".netlify/functions-internal"
+
+[build.environment]
+# GA_MEASUREMENT_ID and GTM_CONTAINER_ID are intentionally not set here.
+# Set them per-site in the Netlify UI (Site configuration → Environment variables)
+# so each deployment reports to the correct analytics property.
+NITRO_PRESET = "netlify"
+NPM_CONFIG_PRODUCTION = "false"
+
+[context.production.environment]
+AGENT_NATIVE_HOSTED_HARNESS = "true"
+AGENT_NATIVE_DISABLE_KEEP_WARM_BACKGROUND = "1"
+# BETTER_AUTH_TRUSTED_ORIGINS must be set in the Netlify UI per site
+# (Site configuration → Environment variables). Do NOT hardcode it here —
+# the value below would override whatever is set in the dashboard and would
+# lock auth to the wrong origins.
+#
+# Example value: https://your-store.netlify.app
+# If you use a custom domain, use that instead (no trailing slash or path).
+# Production release migrations own schema setup; request functions must skip
+# migration probes on every serverless invocation.
+AGENT_NATIVE_RELEASE_MIGRATIONS = "1"
