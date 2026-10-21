@@ -96,7 +96,7 @@ export default function HomeRoute() {
         <a className="side-link side-active" href="#catalog"><IconShoppingBag size={18} /> Shop electronics</a>
         <div className="sidebar-bottom">
           <div className="secure-note"><span><IconCheck size={15} /></span><div><b>Shopping made safe</b><small>Secure checkout · Local support</small></div></div>
-          <div className="sidebar-foot">© 2025 Sokoflex Kenya</div>
+          <div className="sidebar-foot">© 2026 Sokoflex Kenya · loosukdevs</div>
         </div>
       </aside>
 
@@ -145,7 +145,7 @@ export default function HomeRoute() {
               })}</div> : <div className="empty-state">No products match that search. Try another name or category.</div>}
             </section>
             <section className="home-prompt"><div><span className="eyebrow">A LITTLE MORE EVERYDAY</span><h2>Good tech should feel<br />easy from the start.</h2><p>Choose what you need, place your order, and we’ll take it from there.</p></div><button onClick={() => { setCategory("All products"); document.getElementById("catalog")?.scrollIntoView({ behavior: "smooth" }); }}>Find your next essential <IconArrowUpRight size={17} /></button><span className="prompt-mark">s</span></section>
-            <footer className="store-footer"><span className="footer-brand"><b>SOKOFLEX</b><small>Made for everyday moments in Kenya.</small></span><span>Prices shown in Kenyan Shillings (KSh)</span></footer>
+            <footer className="store-footer"><span className="footer-brand"><b>SOKOFLEX</b><small>Made for everyday moments in Kenya.</small></span><span>Prices shown in Kenyan Shillings (KSh)</span><span className="footer-copy">© 2026 loosukdevs</span></footer>
           </div>
       </main>
 

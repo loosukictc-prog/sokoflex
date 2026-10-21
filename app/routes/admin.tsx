@@ -140,7 +140,7 @@ export default function AdminRoute() {
         <div className="admin-nav-spacer" />
         <Link className="admin-store-link" to="/"><IconArrowLeft size={16} /> Back to storefront</Link>
         <button className="admin-store-link admin-signout" onClick={() => void signOut({ redirectTo: "/" })}><IconArrowLeft size={16} /> Sign out</button>
-        <div className="admin-sidebar-footer">Sokoflex Kenya</div>
+        <div className="admin-sidebar-footer">Sokoflex Kenya · loosukdevs © 2026</div>
       </aside>
 
       <main className="admin-main">
