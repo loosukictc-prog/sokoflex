@@ -1,0 +1,13 @@
+{
+  "buildCommand": "npm run vercel-build",
+  "outputDirectory": ".vercel/output",
+  "installCommand": "npm install",
+  "framework": null,
+  "env": {
+    "NITRO_PRESET": "vercel",
+    "AGENT_NATIVE_HOSTED_HARNESS": "true",
+    "AGENT_NATIVE_DISABLE_KEEP_WARM_BACKGROUND": "1",
+    "AGENT_NATIVE_RELEASE_MIGRATIONS": "1",
+    "NPM_CONFIG_PRODUCTION": "false"
+  }
+}

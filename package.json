@@ -6,6 +6,7 @@
   "type": "module",
   "scripts": {
     "migrate:production": "tsx scripts/migrate-production.ts && npm run db:migrate",
+    "vercel-build": "NITRO_PRESET=vercel npm run build && npm run migrate:production",
     "dev": "agent-native dev",
     "build": "agent-native build",
     "start": "agent-native start",
